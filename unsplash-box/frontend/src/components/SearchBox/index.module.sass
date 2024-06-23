@@ -1,0 +1,26 @@
+@use '../../sass/_colors' as colors
+.search-box 
+    width: 100%
+    display: flex
+    align-items: center
+    border: 2px solid colors.$light-grey
+    padding: 1rem
+    background: colors.$white
+    border-radius: 10px
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1)
+    .search-input
+        width: 95%
+        font-size: 16px
+        height: 2rem
+        outline: none
+        border: none
+        background: inherit
+    .search-icon
+        width: 2rem
+        margin-left: auto
+        cursor: pointer
+    @media (prefers-color-scheme: dark)
+        background: colors.$dark
+        border-color: colors.$light-dark
+        .search-input
+            color: colors.$white

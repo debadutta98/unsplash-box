@@ -1,0 +1,32 @@
+@use '../../sass/_colors' as colors
+.header
+    background-color: colors.$white
+    display: flex
+    padding: 1rem 1.5rem
+    align-items: center
+    border-bottom: 2px solid #E5E7EB
+    .brand-img
+        width: 10rem
+        height: auto
+        @media (prefers-color-scheme: dark) 
+            filter: invert(100%) brightness(2) contrast(100%) 
+    .nav
+        margin-left: auto
+        .nav-btn
+            font-size: 16px
+            color: colors.$dark
+            text-decoration: none
+            font-weight: 600
+            padding: 10px 1rem
+            margin-left: 10px
+            @media (prefers-color-scheme: dark) 
+                color: darken(colors.$light-grey, 25)
+            &:hover,&.active
+                background: colors.$mid-grey
+                border-radius: 5px
+                @media (prefers-color-scheme: dark) 
+                    background: darken(colors.$light-dark, 15)
+                    color: colors.$white
+    @media (prefers-color-scheme: dark) 
+        background: colors.$dark
+        border-color: colors.$light-dark

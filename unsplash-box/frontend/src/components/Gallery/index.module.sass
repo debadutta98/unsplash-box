@@ -1,0 +1,15 @@
+.grid-layout
+    display: grid
+    grid-template-columns: repeat(4, minmax(350px, min-content))
+    gap: 1.5rem
+    margin: 2% auto
+    .grid-item
+        display: grid
+        grid-template-columns: minmax(350px, 250px)
+        gap: 1.5rem
+        height: fit-content
+        border-radius: 8px
+        .img-item 
+            cursor: pointer
+        img
+            border-radius: 8px

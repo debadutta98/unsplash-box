@@ -1,0 +1,26 @@
+@use '../../sass/_colors.sass' as colors
+.collection
+    display: flex
+    flex-direction: column
+    gap: 1.5rem
+    margin: 2.5rem
+    text-align: center
+    .collection-heading
+        font-size: 45px
+        font-weight: 450
+        color: transparent
+        background-clip: text
+        background-image: url(../../assets/gradiend-bg@2x.png)
+        background-size: 100% 100%
+        background-position: center
+        background-repeat: no-repeat
+        text-transform: capitalize
+        align-self: center
+    .collection-description
+        width: 30rem
+        font-weight: 400
+        text-align: center
+        font-size: 18px
+        align-self: center
+        @media (prefers-color-scheme: dark)
+            color: colors.$light-grey

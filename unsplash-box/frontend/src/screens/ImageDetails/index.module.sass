@@ -1,0 +1,53 @@
+@use '../../sass/_colors.sass'
+.details-layout
+    display: grid
+    grid-template-columns: 1fr 1fr
+    gap: 2.5rem
+    margin: 5%
+    .img-ctn
+        img
+            border-radius: 8px
+    .img-details
+        display: flex
+        flex-direction: column
+        gap: 1.5rem
+        .collections-ctn
+            display: flex
+            flex-direction: column
+            gap: 1.5rem
+    .user-details
+        display: inline-flex
+        align-items: center
+        gap: 10px
+        img
+            border-radius: 50%
+            object-fit: cover
+        span
+            font-weight: 500
+    span
+        font-weight: 350
+    .btn-ctn
+        display: inline-flex
+        gap: 1.5rem
+        .btn
+            padding: 1rem 2rem
+            cursor: pointer
+            color: colors.$dark
+            background: colors.$light-grey
+            font-weight: 550
+            border-radius: 8px
+            font-size: 16px
+            border: none
+            outline: none
+            @media (prefers-color-scheme: dark) 
+                background: darken(colors.$light-dark, 15)
+                color: colors.$light-grey
+            img
+                width: 25px
+                vertical-align: middle
+                margin-bottom: 4px
+                margin-right: 15px
+                @media (prefers-color-scheme: dark) 
+                    filter: invert(100%) brightness(1.5) contrast(90%)
+    @media (prefers-color-scheme: dark)
+        color: colors.$light-grey
