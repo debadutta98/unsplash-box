@@ -39,7 +39,13 @@ const CollectionList: React.FC = () => {
 
   const collections = data?.map((value) => value.results).flat();
   return (
-    <div className={style['collections']} style={{ padding: '2% 5%' }}>
+    <div
+      className={style['collections']}
+      style={{
+        padding: '2% 5%',
+        justifyContent: Array.isArray(collections) && collections.length === 0 ? 'center' : 'start',
+      }}
+    >
       {!isLoading ? (
         Array.isArray(collections) && collections.length > 0 ? (
           collections.map((collection) => <CollectionItem collection={collection} key={collection.id} />)
