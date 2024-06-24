@@ -29,7 +29,7 @@ function Search() {
     },
     fetch,
     {
-      revalidateAll: true,
+      revalidateAll: false,
       parallel: true,
       revalidateFirstPage: false,
       initialSize: 0,
