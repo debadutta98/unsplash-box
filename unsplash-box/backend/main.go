@@ -14,14 +14,14 @@ import (
 func main() {
 	err := godotenv.Load()
 	if err != nil {
-		log.Fatal(err)
+		log.Println(err)
 	}
 	db.Connect()
 	PORT := os.Getenv("PORT")
 	app := gin.Default()
 
 	app.Use(cors.AllowAll())
-	
+
 	routes.Registerv1Router(app)
 
 	if e := app.Run(":" + PORT); e != nil {
