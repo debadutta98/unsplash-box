@@ -46,7 +46,7 @@ const CollectionList: React.FC = () => {
         justifyContent: Array.isArray(collections) && collections.length === 0 ? 'center' : 'start',
       }}
     >
-      {!isLoading ? (
+      {!isLoading && Array.isArray(collections) ? (
         Array.isArray(collections) && collections.length > 0 ? (
           collections.map((collection) => <CollectionItem collection={collection} key={collection.id} />)
         ) : (
