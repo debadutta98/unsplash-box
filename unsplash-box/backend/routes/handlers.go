@@ -139,9 +139,8 @@ func getCollections(context *gin.Context) {
 		return
 	}
 
-	skip, lim := utils.GetSkipLimit(parsedPage, parsedLimit)
 	pageCount := math.Ceil(float64(count) / float64(parsedLimit))
-	remainingPages := max(count-skip, 0) / lim
+	remainingPages := max(int(pageCount)-parsedPage, 0)
 	available := remainingPages > 0
 
 	for _, collection := range gallery {
@@ -235,7 +234,7 @@ func searchCollection(context *gin.Context) {
 	pCount := parsedPage
 	total := 0
 
-	skip, lim := utils.GetSkipLimit(parsedPage, parsedLimit)
+	skip, _ := utils.GetSkipLimit(parsedPage, parsedLimit)
 
 	for len(searchedCollections) < parsedLimit {
 
@@ -366,7 +365,7 @@ func searchCollection(context *gin.Context) {
 	}
 
 	pages := math.Ceil(float64(total) / float64(parsedLimit))
-	remainingPages := max(total-skip, 0) / lim
+	remainingPages := max(int(pages)-parsedPage, 0)
 	available := remainingPages > 0
 
 	data, err := json.Marshal(gin.H{"results": searchedCollections, "total": total, "pages": pages, "available": available, "remainingPages": remainingPages})
@@ -565,12 +564,11 @@ func getCollectionsPhotos(context *gin.Context) {
 
 	total_photos := photos["total_photos"].(int32)
 
-	skip, lim := utils.GetSkipLimit(parsedPage, parsedLimit)
-
-	photos["pages"] = math.Ceil(float64(total_photos) / float64(parsedLimit))
-	remainingPages := max(int(total_photos)-int(skip), 0) / lim
+	pages := math.Ceil(float64(total_photos) / float64(parsedLimit))
+	remainingPages := max(int(pages)-parsedPage, 0)
 	photos["available"] = remainingPages > 0
 	photos["remainingPages"] = remainingPages
+	photos["pages"] = pages
 
 	data, err := json.Marshal(photos)
 
