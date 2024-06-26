@@ -20,19 +20,19 @@ This project is a full-stack application that allows users to search for images 
 ## User Stories
 
 1. **Homepage**
-   - Users can search for images using keywords.
-   - When `Enter` is pressed, show a list of images matching the keyword(s).
+   - [x] Users can search for images using keywords.
+   - [x] When `Enter` is pressed, show a list of images matching the keyword(s).
 2. **Image Page**
-   - Users can view the details of a selected image.
-   - Display the author and published date of the image.
-   - Show collections that the image belongs to.
-   - Allow users to add the image to collections.
-   - Provide a search and add functionality to add the image to collections it does not yet belong to.
-   - Allow users to remove the image from collections.
-   - Enable users to download the image.
+   - [x] Users can view the details of a selected image.
+   - [x] Display the author and published date of the image.
+   - [x] Show collections that the image belongs to.
+   - [x] Allow users to add the image to collections.
+   - [x] Provide a search and add functionality to add the image to collections it does not yet belong to.
+   - [x] Allow users to remove the image from collections.
+   - [x] Enable users to download the image.
 3. **Collections Page**
-   - Users can see and select existing collections.
-   - Display a list of images within the selected collection.
+   - [x] Users can see and select existing collections.
+   - [x] Display a list of images within the selected collection.
 
 ## Technologies Used
 
