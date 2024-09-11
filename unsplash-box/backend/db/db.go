@@ -34,3 +34,13 @@ func Disconnect() {
 	}
 	log.Println("Disconnect mongodb")
 }
+
+func IsMongoConnected() bool {
+	ctx, cancel := context.WithTimeout(context.Background(), 3*time.Second)
+	defer cancel()
+	if err := Client.Ping(ctx, nil); err != nil {
+		return false
+	} else {
+		return true
+	}
+}

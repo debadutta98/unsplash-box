@@ -16,4 +16,5 @@ func Registerv1Router(app *gin.Engine) {
 	router.POST("/collections/add", addCollection)
 	router.DELETE("/collections/remove", removeCollection)
 	router.GET("/collections/photos", getCollectionsPhotos)
+	router.GET("/health", getHealthCheckStatus)
 }

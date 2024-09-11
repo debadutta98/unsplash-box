@@ -15,6 +15,10 @@ import (
 	"github.com/gin-gonic/gin"
 )
 
+func getHealthCheckStatus(context *gin.Context) {
+	context.JSON(http.StatusOK, gin.H{"mongoStatus": db.IsMongoConnected(), "server": true})
+}
+
 func getPhotos(context *gin.Context) {
 
 	photoId := context.Param("photoId")
