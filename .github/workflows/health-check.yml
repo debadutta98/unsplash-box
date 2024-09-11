@@ -1,0 +1,16 @@
+name: Server Health Check
+
+on:
+  schedule:
+    # Run the job every 1 minutes
+    - cron: '*/1 * * * *'
+  workflow_dispatch: # Allows you to manually trigger the workflow from the GitHub UI
+
+jobs:
+  health-check:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Send health check request
+      run: |
+        curl -I https://unsplash-box.onrender.com/api/1.1/health || echo "Health check failed"
