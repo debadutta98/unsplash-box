@@ -13,4 +13,4 @@ jobs:
     steps:
     - name: Send health check request
       run: |
-        curl -I https://unsplash-box.onrender.com/api/1.1/health || echo "Health check failed"
+        curl -X GET https://unsplash-box.onrender.com/api/1.1/health || echo "Health check failed"
